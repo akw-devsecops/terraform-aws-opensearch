@@ -118,7 +118,6 @@ variable "internal_user_database_enabled" {
   type        = bool
   description = "Enable or disable internal user database"
   default     = true
-
 }
 
 variable "encrypt_at_rest" {
