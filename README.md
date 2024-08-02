@@ -1,13 +1,16 @@
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.47 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.47 |
 
 ## Modules
 
@@ -47,7 +50,7 @@ No modules.
 | <a name="input_advanced_security_options"></a> [advanced\_security\_options](#input\_advanced\_security\_options) | Enable advanced security options | `bool` | `true` | no |
 | <a name="input_anonymous_auth_enabled"></a> [anonymous\_auth\_enabled](#input\_anonymous\_auth\_enabled) | Enable or disable anonymous authentication | `bool` | `false` | no |
 | <a name="input_cidr_blocks_internal"></a> [cidr\_blocks\_internal](#input\_cidr\_blocks\_internal) | Allow traffic from internal | `set(string)` | <pre>[<br>  "10.0.0.0/8",<br>  "172.16.0.0/12"<br>]</pre> | no |
-| <a name="input_cloudwatch_log_type"></a> [cloudwatch\_log\_type](#input\_cloudwatch\_log\_type) | Valid values are: INDEX\_SLOW\_LOGS, SEARCH\_SLOW\_LOGS, ES\_APPLICATION\_LOGS, AUDIT\_LOGS | `string` | `"ES_APPLICATION_LOGS"` | no |
+| <a name="input_cloudwatch_log_types"></a> [cloudwatch\_log\_types](#input\_cloudwatch\_log\_types) | Valid values are: INDEX\_SLOW\_LOGS, SEARCH\_SLOW\_LOGS, ES\_APPLICATION\_LOGS, AUDIT\_LOGS | `list(string)` | <pre>[<br>  "ES_APPLICATION_LOGS"<br>]</pre> | no |
 | <a name="input_dedicated_master_enabled"></a> [dedicated\_master\_enabled](#input\_dedicated\_master\_enabled) | Enable or disable dedicated master | `bool` | `false` | no |
 | <a name="input_ebs_enabled"></a> [ebs\_enabled](#input\_ebs\_enabled) | Enable using EBS-Volume or not | `bool` | `true` | no |
 | <a name="input_ebs_iops"></a> [ebs\_iops](#input\_ebs\_iops) | IOPS for EBS | `number` | `3000` | no |

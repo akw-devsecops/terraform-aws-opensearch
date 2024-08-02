@@ -156,10 +156,10 @@ variable "enable_cloudwatch_log" {
   default     = true
 }
 
-variable "cloudwatch_log_type" {
-  type        = string
+variable "cloudwatch_log_types" {
+  type        = list(string)
   description = "Valid values are: INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS"
-  default     = "ES_APPLICATION_LOGS"
+  default     = ["ES_APPLICATION_LOGS"]
 }
 
 variable "retention_in_days" {
