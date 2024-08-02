@@ -63,10 +63,14 @@ resource "aws_opensearch_domain" "this" {
     tls_security_policy = var.tls_security_policy
   }
 
-  log_publishing_options {
-    cloudwatch_log_group_arn = aws_cloudwatch_log_group.application_logs.arn
-    enabled                  = var.enable_cloudwatch_log
-    log_type                 = var.cloudwatch_log_type
+  dynamic "log_publishing_options" {
+    for_each = var.cloudwatch_log_types
+
+    content {
+      cloudwatch_log_group_arn = aws_cloudwatch_log_group.application_logs.arn
+      enabled                  = var.enable_cloudwatch_log
+      log_type                 = log_publishing_options.value
+    }
   }
 }
 
